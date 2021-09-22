@@ -38,7 +38,7 @@ export const Profile = (props: any): JSX.Element => {
       <Heading as="h3">Account Balance:</Heading>
       <Heading as="h4">{props.userData.balance} JBC</Heading>
       <Button onClick={onOpen}>Send jobCoin</Button>
-
+      <Chart transactions={props.userData.transactions} />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -73,7 +73,6 @@ export const Profile = (props: any): JSX.Element => {
         </ModalContent>
       </Modal>
       <Transactions transactions={props.userData.transactions} />
-      <Chart transactions={props.userData.transactions} />
     </div>
   );
 };
